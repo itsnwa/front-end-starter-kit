@@ -1,0 +1,10 @@
+@import 'variables';
+
+body {
+  background: red;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLG9CQUFvQjs7QUFFcEI7RUFDRSxnQkFBZ0I7RUFDaEIsc0JBQWM7RUFBZCxxQkFBYztFQUFkLGNBQWM7Q0FDZiIsImZpbGUiOiJtYWluLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJ3ZhcmlhYmxlcyc7XG5cbmJvZHkge1xuICBiYWNrZ3JvdW5kOiByZWQ7XG4gIGRpc3BsYXk6IGZsZXg7XG59XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */
