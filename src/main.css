@@ -1,6 +1,7 @@
-@import 'variables';
+@import 'partials/variables.css';
 
 body {
   background: red;
   display: flex;
+  height: 100px;
 }

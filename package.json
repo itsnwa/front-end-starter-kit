@@ -21,6 +21,7 @@
     "gulp-postcss": "^6.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "lost": "^7.1.0",
-    "postcss-cssnext": "^2.8.0"
+    "postcss-cssnext": "^2.8.0",
+    "postcss-pxtorem": "^3.3.1"
   }
 }
