@@ -17,6 +17,7 @@
   "homepage": "https://github.com/itsnwa/frontend-boilerplate#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-postcss": "^6.2.0"
+    "gulp-postcss": "^6.2.0",
+    "postcss-cssnext": "^2.8.0"
   }
 }
