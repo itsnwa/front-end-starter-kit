@@ -1,7 +1,10 @@
-@import 'partials/variables.css';
+@import 'partials/variables.scss';
 
 body {
   background: red;
   display: flex;
   height: 100px;
+
+  h1 { font-size: 30px; }
+
 }
