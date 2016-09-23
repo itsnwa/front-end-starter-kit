@@ -1,11 +1,31 @@
-@import 'partials/variables.css';
+@import '../../node_modules/ress/ress.css',
+        'partials/variables.css';
+
+/* Lost settings */
+@lost gutter 60px;
+@lost flexbox flex;
+
 
 body {
-  background: red;
-  display: flex;
-  height: 100vh;
+  background: var(--base-color);
+  margin: 0;
 
-  h1 { font-size: 30px; }
-  p { font-size: 12px; color: blue; }
+  h1 { font-size: 46px; }
+
+}
+
+section {
+  padding: var(--padding-normal);
+
+  .grid-container {
+
+    .grid-item {
+      height: 40px;
+      background: red;
+      lost-column: 1/2;
+      margin-bottom: 30px;
+    }
+
+  }
 
 }

@@ -8,4 +8,7 @@
   --breakpoint-medium: 900px;
   --breakpoint-large: 1200px;
 
+  /* Padding */
+  --padding-normal: 60px;
+
 }

@@ -8,29 +8,23 @@ const gulp        = require('gulp'),
       // PostCSS Plugins
       pxtorem     = require('postcss-pxtorem'),
       precss      = require('precss'),
-      cssnext     = require('postcss-cssnext');
+      cssnext     = require('postcss-cssnext'),
+      lost        = require('lost');
+
+
+      // Default source and build folder
+var   input       = './src',
+      output      = './build';
 
 
 // Folders
 let path = {
-      css: ['./src/css/*.css',
-            './src/css/**/.css',
-            './src/css/**/**/*.css'],
-      js: ['./src/js/*.js'],
-      images: ['.src/images/*',
-               '.src/images/**/*'],
-      fonts: ['.src/fonts/*']
+      html: [input + '/**/*.html'],
+      css: [input + '/css/*.css'],
+      js: [input + '/js/**/*.js'],
+      images: [input + '/images/**/**/*'],
+      fonts: [input + '/fonts/**/*']
     };
-
-
-// Static Server + watching scss/html files
-gulp.task('serve', ['css'], function() {
-
-    browserSync.init({
-        server: "./src"
-    });
-
-});
 
 
 // CSS Process
@@ -41,26 +35,45 @@ gulp.task('css', () => {
     cssnext({
       browsers: ['last 6 version']
     }),
+    lost(),
     pxtorem({
       propWhiteList: [],
       mediaQuery: true
     })
   ];
 
-  return gulp.src('./src/css/*.css')
+  return gulp.src(path.css)
   .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(cssnano())
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./dest'))
+  .pipe(gulp.dest(output + '/css/'))
   .pipe(browserSync.stream());
+
+});
+
+
+// Copy html files
+gulp.task('html', () => {
+  gulp.src(path.html)
+  .pipe(gulp.dest(output))
+  .pipe(browserSync.stream());
+});
+
+
+// Server
+gulp.task('server', ['html', 'css'], function() {
+
+    browserSync.init({
+        server: output
+    });
 
 });
 
 
 // Watcher task
 gulp.task('watch', () => {
-  gulp.watch('./src/*.html').on('change', browserSync.reload);
+  gulp.watch(path.html, ['html']);
   gulp.watch(path.css, ['css']);
   gulp.watch(path.js, ['js']);
   gulp.watch(path.images, ['imagemin']);
@@ -68,4 +81,4 @@ gulp.task('watch', () => {
 
 
 // Default task
-gulp.task('default', ['serve', 'watch']);
+gulp.task('default', ['server', 'watch']);
