@@ -23,8 +23,11 @@ section {
     .grid-item {
       height: 40px;
       background: red;
-      lost-column: 1/2;
+      lost-masonry-column: 1/2;
       margin-bottom: 30px;
+
+      &.test { height: 300px; }
+
     }
 
   }
