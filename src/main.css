@@ -1,7 +1,7 @@
-@import 'partials/variables.scss';
+@import 'partials/variables.css';
 
 body {
-  background: red;
+  background: var(--base-color);
   display: flex;
   height: 100px;
 

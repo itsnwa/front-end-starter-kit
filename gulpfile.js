@@ -3,12 +3,10 @@ const gulp = require('gulp'),
    postcss = require('gulp-postcss'),
 sourcemaps = require('gulp-sourcemaps'),
    cssnano = require('gulp-cssnano'),
-replaceExt = require('replace-ext'),
 
 // PostCSS Plugins
    pxtorem = require('postcss-pxtorem'),
     precss = require('precss'),
-      scss = require('postcss-scss'),
    cssnext = require('postcss-cssnext');
 
 
@@ -16,10 +14,7 @@ replaceExt = require('replace-ext'),
 gulp.task('css', function () {
 
   var processors = [
-    precss({
-      parser: scss,
-      extension: 'scss'
-    }),
+    precss(),
     cssnext({
       browsers: ['last 6 version']
     }),
@@ -29,12 +24,11 @@ gulp.task('css', function () {
     })
   ];
 
-  return gulp.src('./src/*.scss')
+  return gulp.src('./src/*.css')
   .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(cssnano())
   .pipe(sourcemaps.write())
-  .pipe(replaceExt('.css'))
   .pipe(gulp.dest('./dest'));
 
 });

@@ -1,0 +1,11 @@
+:root {
+
+  /* Color palette */
+  --base-color: rgb(255,255,255);
+
+  /* Breakpoints */
+  --breakpoint-small: 600px;
+  --breakpoint-medium: 900px;
+  --breakpoint-large: 1200px;
+
+}
