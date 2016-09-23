@@ -6,6 +6,7 @@ const gulp        = require('gulp'),
       sourcemaps  = require('gulp-sourcemaps'),
       cssnano     = require('gulp-cssnano'),
       uglify      = require('gulp-uglify'),
+      htmlmin     = require('gulp-htmlmin'),
       browserSync = require('browser-sync'),
       imagemin    = require('gulp-imagemin'),
       console     = require('better-console'),
@@ -34,7 +35,7 @@ let path = {
     };
 
 
-// CSS Process
+// CSS
 gulp.task('css', () => {
 
   var processors = [
@@ -60,7 +61,7 @@ gulp.task('css', () => {
 });
 
 
-// Uglify JS
+// Javascript
 gulp.task('js', () => {
   return gulp.src(path.js)
     .pipe(uglify())
@@ -68,18 +69,19 @@ gulp.task('js', () => {
 });
 
 
-// Compress images
+// Images
 gulp.task('imagemin', () => {
-	return gulp.src(paths.images)
+	return gulp.src(path.images)
 		.pipe(imagemin())
     .pipe(gulp.dest(output + '/images/'))
     .pipe(browserSync.stream());
 });
 
 
-// Copy html files
+// HTML
 gulp.task('html', () => {
   return gulp.src(path.html)
+  .pipe(htmlmin({collapseWhitespace: true}))
   .pipe(gulp.dest(output))
   .pipe(browserSync.stream());
 });
@@ -145,4 +147,6 @@ gulp.task('watch', () => {
 
 
 // Default task
-gulp.task('default', ['server', 'watch']);
+gulp.task('default', ['clean'], () => {
+  gulp.start(['html', 'js', 'imagemin', 'server']);
+});
