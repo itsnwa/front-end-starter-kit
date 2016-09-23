@@ -61,9 +61,8 @@ gulp.task('css', () => {
 
 
 // Uglify JS
-gulp.task('uglify-js', () => {
-  // returns a Node.js stream, but no handling of error messages
-  return gulp.src(paths.js)
+gulp.task('js', () => {
+  return gulp.src(path.js)
     .pipe(uglify())
     .pipe(gulp.dest(output + '/js/'));
 });
