@@ -10,8 +10,21 @@ sourcemaps = require('gulp-sourcemaps'),
    cssnext = require('postcss-cssnext');
 
 
+// Folders
+let path = {
+      css: ['./src/*.css',
+            './src/**/.css',
+            './src/**/**/*.css'],
+      js: ['./src/js/*.js'],
+      images: ['.src/images/*',
+               '.src/images/**/*'],
+      fonts: ['.src/fonts/*']
+    };
+
+
+
 // CSS Process
-gulp.task('css', function () {
+gulp.task('css', () => {
 
   var processors = [
     precss(),
@@ -32,3 +45,16 @@ gulp.task('css', function () {
   .pipe(gulp.dest('./dest'));
 
 });
+
+
+// Watcher task
+gulp.task('watch', () => {
+  gulp.watch('.src/*.html');
+  gulp.watch(path.css, ['css']);
+  gulp.watch(path.js, ['js']);
+  gulp.watch(path.images, ['imagemin']);
+});
+
+
+// Default task
+gulp.task('default', ['browser-sync', 'watch']);
