@@ -1,3 +1,5 @@
+'use strict';
+
       // Require
 const gulp        = require('gulp'),
       postcss     = require('gulp-postcss'),
@@ -20,7 +22,7 @@ var   input       = './src',
 // Folders
 let path = {
       html: [input + '/**/*.html'],
-      css: [input + '/css/*.css'],
+      css: [input + '/css/**/*.css'],
       js: [input + '/js/**/*.js'],
       images: [input + '/images/**/**/*'],
       fonts: [input + '/fonts/**/*']
@@ -42,7 +44,7 @@ gulp.task('css', () => {
     })
   ];
 
-  return gulp.src(path.css)
+  return gulp.src(input + '/css/main.css')
   .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(cssnano())

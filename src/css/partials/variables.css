@@ -1,14 +1,41 @@
 :root {
 
+
+
   /* Color palette */
   --base-color: rgb(255,255,255);
 
-  /* Breakpoints */
-  --breakpoint-small: 600px;
-  --breakpoint-medium: 900px;
-  --breakpoint-large: 1200px;
+
+
+  /* Typography - Sizes */
+
+  /* Headings */
+  --type-size-h1: 36px;
+  --type-size-h2: 24px;
+  --type-size-h3: 18px;
+
+  /* Text */
+  --type-size-normal: 16px;
+   --type-size-small: 13px;
+    --type-size-mini: 10px;
+
+  /* Typography - Weights */
+    --type-weight-bold: 600;
+  --type-weight-normal: 400;
+   --type-weight-light: 300;
+
+
 
   /* Padding */
   --padding-normal: 60px;
+
+
+
+  /* Breakpoints */
+   --breakpoint-small: 600px;
+  --breakpoint-medium: 900px;
+   --breakpoint-large: 1200px;
+
+
 
 }

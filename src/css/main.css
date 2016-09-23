@@ -1,10 +1,11 @@
-@import '../../node_modules/ress/ress.css',
-        'partials/variables.css';
+/* CSS Reset */
+@import '../../node_modules/ress/ress.css';
+
+/* Partials */
+@import 'partials/variables.css';
 
 /* Lost settings */
 @lost gutter 60px;
-@lost flexbox flex;
-
 
 body {
   background: var(--base-color);
