@@ -5,8 +5,12 @@ const gulp        = require('gulp'),
       postcss     = require('gulp-postcss'),
       sourcemaps  = require('gulp-sourcemaps'),
       cssnano     = require('gulp-cssnano'),
+      uglify      = require('gulp-uglify'),
       browserSync = require('browser-sync'),
-      console       = require('better-console'),
+      imagemin    = require('gulp-imagemin'),
+      console     = require('better-console'),
+      del         = require('del'),
+      rename      = require('gulp-rename'),
 
       // PostCSS Plugins
       pxtorem     = require('postcss-pxtorem'),
@@ -56,11 +60,35 @@ gulp.task('css', () => {
 });
 
 
+// Uglify JS
+gulp.task('uglify-js', () => {
+  // returns a Node.js stream, but no handling of error messages
+  return gulp.src(paths.js)
+    .pipe(uglify())
+    .pipe(gulp.dest(output + '/js/'));
+});
+
+
+// Compress images
+gulp.task('imagemin', () => {
+	return gulp.src(paths.images)
+		.pipe(imagemin())
+    .pipe(gulp.dest(output + '/images/'))
+    .pipe(browserSync.stream());
+});
+
+
 // Copy html files
 gulp.task('html', () => {
-  gulp.src(path.html)
+  return gulp.src(path.html)
   .pipe(gulp.dest(output))
   .pipe(browserSync.stream());
+});
+
+
+// Clean build folder
+gulp.task('clean', () => {
+  return del(output);
 });
 
 
