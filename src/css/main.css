@@ -1,10 +1,11 @@
 @import 'partials/variables.css';
 
 body {
-  background: var(--base-color);
+  background: red;
   display: flex;
-  height: 100px;
+  height: 100vh;
 
   h1 { font-size: 30px; }
+  p { font-size: 12px; color: blue; }
 
 }

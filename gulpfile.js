@@ -13,9 +13,9 @@ const gulp        = require('gulp'),
 
 // Folders
 let path = {
-      css: ['./src/*.css',
-            './src/**/.css',
-            './src/**/**/*.css'],
+      css: ['./src/css/*.css',
+            './src/css/**/.css',
+            './src/css/**/**/*.css'],
       js: ['./src/js/*.js'],
       images: ['.src/images/*',
                '.src/images/**/*'],
@@ -23,13 +23,13 @@ let path = {
     };
 
 
-// Server
-gulp.task('browser-sync', ['css'], () => {
-    browserSync({
-        server: {
-            baseDir: './dest'
-        }
+// Static Server + watching scss/html files
+gulp.task('serve', ['css'], function() {
+
+    browserSync.init({
+        server: "./src"
     });
+
 });
 
 
@@ -47,19 +47,20 @@ gulp.task('css', () => {
     })
   ];
 
-  return gulp.src('./src/*.css')
+  return gulp.src('./src/css/*.css')
   .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(cssnano())
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./dest'));
+  .pipe(gulp.dest('./dest'))
+  .pipe(browserSync.stream());
 
 });
 
 
 // Watcher task
 gulp.task('watch', () => {
-  gulp.watch('.src/*.html');
+  gulp.watch('./src/*.html').on('change', browserSync.reload);
   gulp.watch(path.css, ['css']);
   gulp.watch(path.js, ['js']);
   gulp.watch(path.images, ['imagemin']);
@@ -67,4 +68,4 @@ gulp.task('watch', () => {
 
 
 // Default task
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['serve', 'watch']);
