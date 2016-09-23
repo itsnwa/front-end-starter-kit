@@ -1,13 +1,14 @@
-// Require
-const gulp = require('gulp'),
-   postcss = require('gulp-postcss'),
-sourcemaps = require('gulp-sourcemaps'),
-   cssnano = require('gulp-cssnano'),
+      // Require
+const gulp        = require('gulp'),
+      postcss     = require('gulp-postcss'),
+      sourcemaps  = require('gulp-sourcemaps'),
+      cssnano     = require('gulp-cssnano'),
+      browserSync = require('browser-sync'),
 
-// PostCSS Plugins
-   pxtorem = require('postcss-pxtorem'),
-    precss = require('precss'),
-   cssnext = require('postcss-cssnext');
+      // PostCSS Plugins
+      pxtorem     = require('postcss-pxtorem'),
+      precss      = require('precss'),
+      cssnext     = require('postcss-cssnext');
 
 
 // Folders
@@ -21,6 +22,15 @@ let path = {
       fonts: ['.src/fonts/*']
     };
 
+
+// Server
+gulp.task('browser-sync', ['css'], () => {
+    browserSync({
+        server: {
+            baseDir: './dest'
+        }
+    });
+});
 
 
 // CSS Process
