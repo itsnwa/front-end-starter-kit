@@ -64,11 +64,45 @@ gulp.task('html', () => {
 
 
 // Server
-gulp.task('server', ['html', 'css'], function() {
-
+gulp.task('server', ['css'], () => {
     browserSync.init({
-        server: output
+        server: {
+            baseDir: output
+        },
+        notify: {
+            styles: {
+                top: '30px',
+                left: '50%',
+                width: '200px',
+                transform: 'translate(-50%,-50%)',
+                margin: '0px',
+                padding: '8px 12px',
+                position: 'fixed',
+                fontSize: '13px',
+                fontFamily: 'Helvetica',
+                zIndex: '9999',
+                borderRadius: '16px',
+                color: 'white',
+                textAlign: 'center',
+                display: 'block',
+                backgroundColor: 'rgba(0,0,0, 0.8)'
+            }
+        },
+        logLevel: 'silent',
+        browser: 'google chrome'
     });
+
+    console.clear();
+    console.log('Starting DevelopmentServer');
+    console.log('           ');
+    console.log('           ');
+    console.log('    /   /  _  / \\     NWA');
+    console.log('   / \\ / \\/ \\/ - \\    Local Development Environment');
+    console.log('           ');
+    console.log('           ');
+    console.log('Listening on port 3000');
+    console.log('           ');
+    console.log('           ');
 
 });
 
