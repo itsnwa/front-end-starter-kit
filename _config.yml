@@ -1,0 +1,21 @@
+title: Project title
+email: your-email@domain.com
+description:
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://example.com" # the base hostname & protocol for your site
+
+# Social accounts
+twitter_username: yourTwitterUserName
+github_username:  yourGitHubUserName
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Forget about these folders
+exclude: ["src",
+          "gulpfile.js",
+          "Gemfile",
+          "Gemfile.lock",
+          "node_modules",
+          "package.json"]
