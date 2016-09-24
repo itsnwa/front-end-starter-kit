@@ -10,7 +10,7 @@ Opinionated from top to bottom.
 Run `$ gulp` to start the server, a browser window should automatically launch on `localhost:3000`
 
 ### Folder structure
-
+```
 front-end-starter-kit/
 |
 |- src/
@@ -27,7 +27,7 @@ front-end-starter-kit/
 |
 |  |- js/
 |    |- main.js ____________________ # Main JS
-
+```
 
 # Based on
 - Gulp
