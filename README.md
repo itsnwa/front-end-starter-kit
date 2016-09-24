@@ -1,10 +1,17 @@
-# frontend-boilerplate
-Opinionated front-end boilerplate
+# Front-end Starter Kit
+Opinionated from top to bottom.
+
+# Getting Started
 
 ## Based on
-
-**HTML5**
-
-**PostCSS**
-
-**Gulp**
+- Ress CSS Reset
+- PostCSS
+  - Nextcss
+  - Autoprefixer
+  - Precss
+  - pxtorem
+- CSS Nano
+- Imagemin
+- UglifyJS
+- browserSync
+- Jekyll
