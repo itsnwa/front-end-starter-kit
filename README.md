@@ -30,16 +30,17 @@ front-end-starter-kit/
 ```
 
 # Based on
-- Gulp
-- Ress CSS Reset
-- PostCSS
-  - Nextcss
-  - Autoprefixer
-  - Precss
-  - pxtorem
-  - Lost Grid System
-- CSS Nano
-- Imagemin
-- UglifyJS
+- jekyll
+- gulp
 - browserSync
-- Jekyll
+- ress CSS Reset
+- postCSS
+  - nextcss
+  - autoprefixer
+  - precss
+  - pxtorem
+  - lost
+- cssnano
+- imagemin
+- uglifyJS
+- htmlmin

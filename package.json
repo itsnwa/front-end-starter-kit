@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Opinionated front-end boilerplate",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "git add . && git commit -m \"Update\" && git push"
   },
   "repository": {
     "type": "git",
