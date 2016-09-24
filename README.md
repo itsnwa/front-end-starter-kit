@@ -14,16 +14,16 @@ Run `$ gulp` to start the server, a browser window should automatically launch o
 front-end-starter-kit/
 |
 |- src/
-|  |- index.html ___________________ # App Structure
+|  |- index.html ___________________ # Entry point
 |
 |  |- css/
-|    |- main.css ___________________ # Footer
+|    |- main.css ___________________ # Main CSS file, only imports
 |    |- partials/
 |       |-  base.css________________ # Base styles
 |       |-  variables.css___________ # Variables
 |
 |  |- images/
-|    |- #Put all your images here, including content images
+|     # Put all your images here, including content images
 |
 |  |- js/
 |    |- main.js ____________________ # Main JS
