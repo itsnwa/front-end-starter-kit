@@ -1,0 +1,22 @@
+body {
+  background: var(--base-color);
+  margin: 0;
+  p { font-size: var(--type-size-normal); }
+  h1 { font-size: 46px; }
+}
+
+section {
+  padding: var(--padding-normal);
+
+  .grid-container {
+
+    .grid-item {
+      height: 40px;
+      background: pink;
+      lost-column: 1/2;
+      margin-bottom: 30px;
+    }
+
+  }
+
+}

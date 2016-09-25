@@ -10,11 +10,9 @@ github_username:  yourGitHubUserName
 
 # Build settings
 markdown: kramdown
-theme: minima
 
 # Forget about these folders
 exclude: ["src",
-          "build",
           "gulpfile.js",
           "Gemfile",
           "Gemfile.lock",

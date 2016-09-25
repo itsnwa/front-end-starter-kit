@@ -1,35 +1,12 @@
 /* CSS Reset */
-@import '../../node_modules/ress/ress.css';
+/*@import '../../node_modules/ress/ress.css';*/
 
-/* Partials */
-@import 'partials/variables.css';
 
 /* Lost settings */
+/*@lost flexbox flex;*/
 @lost gutter 60px;
 
-body {
-  background: var(--base-color);
-  margin: 0;
 
-  h1 { font-size: 46px; }
-
-}
-
-section {
-  padding: var(--padding-normal);
-
-  .grid-container {
-
-    .grid-item {
-      height: 40px;
-      background: red;
-      lost-masonry-column: 1/2;
-      margin-bottom: 30px;
-
-      &.test { height: 300px; }
-
-    }
-
-  }
-
-}
+/* Partials */
+@import 'partials/variables';
+@import 'partials/base';

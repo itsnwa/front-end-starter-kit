@@ -33,7 +33,7 @@ let path = {
       js: [src + '/js/**/*.js'],
       images: [src + '/images/**/**/*'],
       fonts: [src + '/fonts/**/*'],
-      jekyll: ['index.html', '_layouts', '_includes', '_data']
+      jekyll: ['index.html', '_layouts', '_includes', '_data', 'assets/**/*']
     };
 
 
@@ -78,6 +78,7 @@ gulp.task('css', () => {
     .pipe(cssnano())
   .pipe(sourcemaps.write())
   .pipe(gulp.dest(dist + '/css/'))
+  .pipe(browserSync.stream());
 });
 
 
@@ -86,6 +87,7 @@ gulp.task('js', () => {
   return gulp.src(path.js)
     .pipe(uglify())
     .pipe(gulp.dest(dist + '/js/'))
+    .pipe(browserSync.stream());
 });
 
 
@@ -94,6 +96,7 @@ gulp.task('imagemin', () => {
 	return gulp.src(path.images)
 	  .pipe(imagemin())
     .pipe(gulp.dest(dist + '/images/'))
+    .pipe(browserSync.stream());
 });
 
 
@@ -110,7 +113,7 @@ gulp.task('clean:all', () => del(['_site', 'assets'], {dot: true}));
 
 
 // Server
-gulp.task('server', ['jekyll-build'], () => {
+gulp.task('server', ['css', 'jekyll-build'], () => {
   browserSync.init({
     server: {
       baseDir: '_site',
