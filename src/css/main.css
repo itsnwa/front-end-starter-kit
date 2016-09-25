@@ -1,9 +1,9 @@
 /* CSS Reset */
-/*@import '../../node_modules/ress/ress.css';*/
+@import '../../node_modules/normalize.css/normalize.css';
 
 
 /* Lost settings */
-/*@lost flexbox flex;*/
+@lost flexbox flex;
 @lost gutter 60px;
 
 

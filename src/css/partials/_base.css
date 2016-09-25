@@ -1,6 +1,7 @@
 body {
   background: var(--base-color);
   margin: 0;
+  min-height: 100vh;
   p { font-size: var(--type-size-normal); }
   h1 { font-size: 46px; }
 }
@@ -9,6 +10,7 @@ section {
   padding: var(--padding-normal);
 
   .grid-container {
+    lost-flex-container: row;
 
     .grid-item {
       height: 40px;
