@@ -1,0 +1,19 @@
+.powered-by--section {
+  background: var(--color-light-grey);
+  margin-top: -72px;
+  padding-top: 120px;
+  z-index: 100;
+
+  h3.title {
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+  }
+
+  .grid-item {
+    lost-column: 1/5;
+
+    img { height: 62px; }
+
+  }
+
+}

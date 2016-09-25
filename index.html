@@ -1,22 +1,15 @@
 ---
 layout: default
 ---
-<section class="welcome">
-  <h1 class="hero--header">Opinionated to the max</h1>
-  <h3 class="hero--lead-text">A front-end starter kit</h3>
-</section>
 
-<section>
-  <div class="grid-container">
-    <div class="grid-item">Div 1</div>
-    <div class="grid-item">Div 2</div>
-    <div class="grid-item">Div 3</div>
-    <div class="grid-item">Div 4</div>
-    <div class="grid-item">Div 5</div>
-    <div class="grid-item">Div 6</div>
-    <div class="grid-item">Div 7</div>
-    <div class="grid-item">Div 8</div>
-    <div class="grid-item">Div 9</div>
-    <div class="grid-item">Div 10</div>
+<section class="hero--section">
+  {% include navbar.html %}
+  <h1 class="hero--header">Front-end starter kit</h1>
+  <h3 class="hero--lead-text">A very much opinionated thingy</h3>
+  <img src="{{ site.baseurl }}/assets/images/computer-illu.svg" class="computer" alt="computer illustration">
+  <div class="one-step-setup">
+    <p class="link">$ git clone https://github.com/itsnwa/front-end-starter-kit.git</p>
+    <span class="version">v0.0.1</span>
   </div>
 </section>
+{% include powered-by.html %}

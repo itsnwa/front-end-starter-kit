@@ -11,6 +11,7 @@ const gulp        = require('gulp'),
       imagemin    = require('gulp-imagemin'),
       console     = require('better-console'),
       del         = require('del'),
+      plumber     = require('gulp-plumber'),
       rename      = require('gulp-rename'),
       cp          = require('child_process'),
 
@@ -27,12 +28,12 @@ var   src         = './src',
 
 
 // Folders ( Make sure you add new jekyll folders to the jekyll line as needed )
-let path = {
+var path = {
       css: [src + '/css/**/*.css'],
       js: [src + '/js/**/*.js'],
       images: [src + '/images/**/**/*'],
       fonts: [src + '/fonts/**/*'],
-      jekyll: ['index.html', '_layouts', '_includes', '_data', 'assets/**/*']
+      jekyll: ['index.html', '_layouts/**/*', '_includes/**/*', '_data/**/*', 'assets/**/*']
     };
 
 
@@ -76,7 +77,8 @@ gulp.task('css', () => {
     .pipe(postcss(processors))
     .pipe(cssnano())
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest(dist + '/css/'))
+  .pipe(rename({dirname: dist + '/css/'}))
+  .pipe(gulp.dest('./'))
   .pipe(browserSync.stream());
 });
 
@@ -85,7 +87,8 @@ gulp.task('css', () => {
 gulp.task('js', () => {
   return gulp.src(path.js)
     .pipe(uglify())
-    .pipe(gulp.dest(dist + '/js/'))
+    .pipe(rename({dirname: dist + '/js/'}))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
 });
 
@@ -93,8 +96,13 @@ gulp.task('js', () => {
 // Images
 gulp.task('imagemin', () => {
 	return gulp.src(path.images)
+    .pipe(plumber((error) => {
+      gutil.log(gutil.colors.red(error.message));
+      gulp.task('imagemin').emit('end');
+    }))
 	  .pipe(imagemin())
-    .pipe(gulp.dest(dist + '/images/'))
+    .pipe(rename({dirname: dist + '/images'}))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
 });
 
@@ -137,8 +145,7 @@ gulp.task('server', ['css', 'jekyll-build'], () => {
         backgroundColor: 'rgba(0,0,0, 0.8)'
       }
     },
-    logLevel: 'silent',
-    browser: 'google chrome'
+    logLevel: 'silent'
   });
 
   console.clear();
@@ -152,12 +159,6 @@ gulp.task('server', ['css', 'jekyll-build'], () => {
   console.log('Listening on port 3000');
   console.log('           ');
   console.log('           ');
-});
-
-
-// Re-build entire site with clean folders
-gulp.task('prod', ['clean'], () => {
-  gulp.start(['']);
 });
 
 

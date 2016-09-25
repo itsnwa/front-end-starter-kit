@@ -1,24 +1,29 @@
 body {
-  background: var(--base-color);
+  background: var(--color-light-grey);
   margin: 0;
   min-height: 100vh;
-  p { font-size: var(--type-size-normal); }
-  h1 { font-size: 46px; }
+  font-family: 'Roboto Mono';
+
+  p {
+    font-size: var(--type-size-normal);
+  }
+
+  h1 {
+    font-size: var(--type-size-h1);
+    font-weight: var(--type-weight-light);
+  }
+
+  h3 {
+    font-size: var(--type-size-medium);
+    font-weight: var(--type-weight-light);
+  }
+
 }
 
 section {
-  padding: var(--padding-normal);
 
-  .grid-container {
-    lost-flex-container: row;
-
-    .grid-item {
-      height: 40px;
-      background: pink;
-      lost-column: 1/2;
-      margin-bottom: 30px;
-    }
-
+  .container {
+    lost-center: 920px;
   }
 
 }

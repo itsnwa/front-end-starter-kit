@@ -1,0 +1,42 @@
+.hero--section {
+  background: linear-gradient(-120deg, #CFD1C7, #E0C9B8);
+  text-align: center;
+  color: var(--color-white);
+
+  h1.hero--header {
+  }
+
+  h3.hero--lead-text {
+    font-size: var(--type-size-h2);
+    padding-bottom: 80px;
+  }
+
+  img.computer {
+    max-width: 90%;
+    z-index: 50;
+  }
+
+  .one-step-setup {
+    margin-top: -15px;
+
+    p.link {
+      display: inline;
+      color: var(--color-black);
+      font-size: var(--type-size-h3);
+      background: var(--color-white);
+      padding: 32px 42px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
+    }
+
+    span.version {
+      display: block;
+      color: var(--color-black);
+      margin-top: 50px;
+      font-size: var(--type-size-small);
+      opacity: .6;
+    }
+
+  }
+
+}

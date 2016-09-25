@@ -1,0 +1,8 @@
+.header--nav-bar {
+  lost-flex-container: row;
+  padding: var(--padding-normal);
+  justify-content: space-between;
+
+  img { height: 28px; }
+
+}

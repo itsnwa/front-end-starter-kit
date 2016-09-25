@@ -10,3 +10,6 @@
 /* Partials */
 @import 'partials/variables';
 @import 'partials/base';
+@import 'partials/navbar';
+@import 'partials/hero';
+@import 'partials/powered-by';

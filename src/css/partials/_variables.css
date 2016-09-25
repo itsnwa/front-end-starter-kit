@@ -3,14 +3,20 @@
 
 
   /* Color palette */
-  --base-color: rgb(255,255,255);
+
+  --color-primary: rgb(249,230,213);
+  --color-secondary: rgb(158,68,197);
+  --color-light-grey: rgb(247, 247, 247);
+  --color-white: rgb(255,255,255);
+  --color-black: rgb(45,45,45);
+
 
 
 
   /* Typography - Sizes */
 
   /* Headings */
-  --type-size-h1: 36px;
+  --type-size-h1: 58px;
   --type-size-h2: 24px;
   --type-size-h3: 18px;
 
