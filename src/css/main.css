@@ -8,6 +8,7 @@
 
 
 /* Partials */
+@import 'partials/fonts';
 @import 'partials/variables';
 @import 'partials/base';
 @import 'partials/navbar';

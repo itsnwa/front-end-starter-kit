@@ -1,17 +1,21 @@
 :root {
 
 
-
   /* Color palette */
 
   --color-primary: rgb(249,230,213);
   --color-secondary: rgb(158,68,197);
   --color-light-grey: rgb(247, 247, 247);
+  --color-grey: rgb(200,200,200);
   --color-medium-grey: rgb(150,150,150);
   --color-white: rgb(255,255,255);
   --color-black: rgb(45,45,45);
 
 
+  /* Typeface */
+  --typeface-main-bold: 'sf-mono-bold', monospace;
+  --typeface-main-normal: 'sf-mono-regular', monospace;
+  --typeface-main-light: 'sf-mono-light', monospace;
 
 
   /* Typography - Sizes */
@@ -25,12 +29,6 @@
   --type-size-normal: 16px;
    --type-size-small: 13px;
     --type-size-mini: 10px;
-
-  /* Typography - Weights */
-    --type-weight-bold: 600;
-  --type-weight-normal: 400;
-   --type-weight-light: 300;
-
 
 
   /* Padding */

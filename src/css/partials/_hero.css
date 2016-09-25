@@ -9,30 +9,39 @@
   h3.hero--lead-text {
     font-size: var(--type-size-h2);
     padding-bottom: 80px;
+    opacity: .65;
   }
 
   img.computer {
+    width: 960px;
     max-width: 90%;
     z-index: 50;
   }
 
   .one-step-setup {
-    margin-top: -15px;
+    margin-top: -49px;
 
-    p.link {
-      display: inline;
+    .link-field {
+      display: inline-block;
       color: var(--color-black);
-      font-size: var(--type-size-h3);
       background: var(--color-white);
-      padding: 32px 42px;
+      padding: 12px 42px;
       border-radius: 15px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
+      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .25);
+
+      p.link {
+        font-size: var(--type-size-normal);
+        padding: 8px 0;
+        border-bottom: 1px dashed var(--color-grey);
+        border-top: 1px transparent;
+      }
+
     }
 
     span.version {
       display: block;
       color: var(--color-black);
-      margin-top: 50px;
+      margin-top: 30px;
       font-size: var(--type-size-small);
       opacity: .6;
     }

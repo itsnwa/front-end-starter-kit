@@ -2,21 +2,23 @@ body {
   background: var(--color-light-grey);
   margin: 0;
   min-height: 100vh;
-  font-family: 'Roboto Mono';
+  font-family: var(--typeface-main-normal);
   letter-spacing: 1px;
+
+  ::selection { background: #ffb7b7; }
 
   p {
     font-size: var(--type-size-normal);
   }
 
   h1 {
+    font-family: var(--typeface-main-light);
     font-size: var(--type-size-h1);
-    font-weight: var(--type-weight-light);
   }
 
   h3 {
+    font-family: var(--typeface-main-normal);
     font-size: var(--type-size-medium);
-    font-weight: var(--type-weight-light);
   }
 
 }
