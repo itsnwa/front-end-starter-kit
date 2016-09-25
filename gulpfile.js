@@ -76,7 +76,7 @@ gulp.task('css', () => {
   return gulp.src(src + '/css/main.css')
   .pipe(sourcemaps.init())
     .pipe(postcss(processors))
-    .pipe(cssnano())
+    .pipe(cssnano({ discardComments: { removeAll: true }}))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest(dist + '/css/'))
   .pipe(browserSync.stream());

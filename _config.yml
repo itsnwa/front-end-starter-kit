@@ -4,12 +4,15 @@ description:
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://example.com" # the base hostname & protocol for your site
 
+
 # Social accounts
 twitter_username: yourTwitterUserName
 github_username:  yourGitHubUserName
 
+
 # Build settings
 markdown: kramdown
+
 
 # Forget about these folders
 exclude: ["src",
@@ -18,3 +21,9 @@ exclude: ["src",
           "Gemfile.lock",
           "node_modules",
           "package.json"]
+
+
+# Compress HTML
+compress_html:
+  clippings: all
+  comments: all

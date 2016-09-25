@@ -10,7 +10,7 @@ Opinionated from top to bottom.
 
 ### Run local development server
 
-Run `$ gulp` to start the server, a browser window automatically launches on `localhost:3000`
+Run `$ gulp` to start the server, a new browser window/tab automatically opens on `localhost:3000`
 
 ### Folder structure
 
@@ -26,9 +26,9 @@ front-end-starter-kit/
 |  |- css/
 |    |- main.css ___________________ # Main CSS file, only imports
 |    |- partials/
-|       |-  base.css________________ # Base styles
-|       |-  variables.css___________ # Variables
-|       |-  ...
+|       |-  _base.css________________ # Base styles
+|       |-  _variables.css___________ # Variables
+|       |-  ...______________________ # Add your own components here
 |
 |  |- images/
 |     # Put all your images here, including content images
