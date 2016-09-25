@@ -31,9 +31,9 @@ var   src         = './src',
 var path = {
       css: [src + '/css/**/*.css'],
       js: [src + '/js/**/*.js'],
-      images: [src + '/images/**/**/*'],
+      images: [src + '/images/**/*'],
       fonts: [src + '/fonts/**/*'],
-      jekyll: ['index.html', '_layouts/**/*', '_includes/**/*', '_data/**/*', 'assets/**/*']
+      jekyll: ['index.html', '_pages/**/*', '_layouts/**/*', '_includes/**/*', '_data/**/*', 'assets/**/*']
     };
 
 
@@ -41,6 +41,7 @@ var path = {
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
+
 
 // Build the Jekyll Site
 gulp.task('jekyll-build', (code) => {
@@ -77,8 +78,7 @@ gulp.task('css', () => {
     .pipe(postcss(processors))
     .pipe(cssnano())
   .pipe(sourcemaps.write())
-  .pipe(rename({dirname: dist + '/css/'}))
-  .pipe(gulp.dest('./'))
+  .pipe(gulp.dest(dist + '/css/'))
   .pipe(browserSync.stream());
 });
 
@@ -87,8 +87,7 @@ gulp.task('css', () => {
 gulp.task('js', () => {
   return gulp.src(path.js)
     .pipe(uglify())
-    .pipe(rename({dirname: dist + '/js/'}))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest(dist + '/js/'))
     .pipe(browserSync.stream());
 });
 
@@ -101,8 +100,7 @@ gulp.task('imagemin', () => {
       gulp.task('imagemin').emit('end');
     }))
 	  .pipe(imagemin())
-    .pipe(rename({dirname: dist + '/images'}))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest(dist + '/images/'))
     .pipe(browserSync.stream());
 });
 
@@ -171,7 +169,13 @@ gulp.task('watch', () => {
 });
 
 
+// Re-build everything
+gulp.task('build', ['clean:all'], () => {
+  gulp.start(['css', 'js', 'imagemin', 'copy-fonts']);
+});
+
+
 // Default task
-gulp.task('default', ['clean'], () => {
+gulp.task('default', ['build'], () => {
   gulp.start(['server', 'watch']);
 });

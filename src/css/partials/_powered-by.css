@@ -6,13 +6,21 @@
 
   h3.title {
     text-transform: uppercase;
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--type-weight-normal);
+    font-size: var(--type-size-mini);
+    color: var(--color-medium-grey);
+    padding-bottom: 30px;
   }
 
   .grid-item {
-    lost-column: 1/5;
+    lost-column: 1/6;
+    height: 52px;
 
-    img { height: 62px; }
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+    }
 
   }
 
