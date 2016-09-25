@@ -28,6 +28,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
     "lost": "^7.1.0",
     "postcss-cssnext": "^2.8.0",
     "postcss-pxtorem": "^3.3.1",

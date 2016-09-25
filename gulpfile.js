@@ -2,6 +2,7 @@
 
       // Require
 const gulp        = require('gulp'),
+      gutil       = require('gulp-util'),
       postcss     = require('gulp-postcss'),
       sourcemaps  = require('gulp-sourcemaps'),
       cssnano     = require('gulp-cssnano'),
@@ -12,6 +13,7 @@ const gulp        = require('gulp'),
       console     = require('better-console'),
       del         = require('del'),
       rename      = require('gulp-rename'),
+      cp          = require('child_process'),
 
       // PostCSS Plugins
       pxtorem     = require('postcss-pxtorem'),
@@ -31,8 +33,29 @@ let path = {
       css: [input + '/css/**/*.css'],
       js: [input + '/js/**/*.js'],
       images: [input + '/images/**/**/*'],
-      fonts: [input + '/fonts/**/*']
+      fonts: [input + '/fonts/**/*'],
+      jekyll: ['index.html', '_layouts', '_site', '_includes', '_data']
     };
+
+
+// Jekyll build
+var messages = {
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+};
+
+// Build the Jekyll Site
+gulp.task('jekyll-build', function (code) {
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+      .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
+      .on('close', code);
+});
+
+
+// Rebuild Jekyll & do page reload
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+    browserSync.reload();
+});
 
 
 // CSS
@@ -81,7 +104,17 @@ gulp.task('imagemin', () => {
 // HTML
 gulp.task('html', () => {
   return gulp.src(path.html)
-  .pipe(htmlmin({collapseWhitespace: true}))
+  .pipe(htmlmin({
+    removeComments: true,
+    collapseWhitespace: true,
+    collapseBooleanAttributes: true,
+    removeAttributeQuotes: true,
+    removeRedundantAttributes: true,
+    removeEmptyAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    removeOptionalTags: true
+  }))
   .pipe(gulp.dest(output))
   .pipe(browserSync.stream());
 });
@@ -94,7 +127,7 @@ gulp.task('clean', () => {
 
 
 // Server
-gulp.task('server', ['css'], () => {
+gulp.task('server', ['css', 'jekyll-build'], () => {
     browserSync.init({
         server: {
             baseDir: output
@@ -131,9 +164,9 @@ gulp.task('server', ['css'], () => {
     console.log('           ');
     console.log('           ');
     console.log('Listening on port 3000');
+    console.log(messages.jekyllBuild)
     console.log('           ');
     console.log('           ');
-
 });
 
 
