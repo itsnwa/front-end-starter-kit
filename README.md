@@ -43,10 +43,10 @@ front-end-starter-kit/
 - gulp
 - browsersync
 - modernizer
+- sass
 - postcss
   - nextcss
   - autoprefixer
-  - precss
   - pxtorem
   - lost
 - cssnano
