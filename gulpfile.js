@@ -3,6 +3,7 @@
       // Require
 const gulp        = require('gulp'),
       gutil       = require('gulp-util'),
+      sass        = require('gulp-sass'),
       postcss     = require('gulp-postcss'),
       sourcemaps  = require('gulp-sourcemaps'),
       cssnano     = require('gulp-cssnano'),
@@ -29,7 +30,7 @@ var   src         = './src',
 
 // Folders ( Make sure you add new jekyll folders to the jekyll line as needed )
 var path = {
-      css: [src + '/css/**/*.css'],
+      scss: [src + '/scss/**/*.scss'],
       js: [src + '/js/**/*.js'],
       images: [src + '/images/**/*'],
       fonts: [src + '/fonts/**/*'],
@@ -73,8 +74,9 @@ gulp.task('css', () => {
     })
   ];
 
-  return gulp.src(src + '/css/main.css')
+  return gulp.src(src + '/scss/*.scss')
   .pipe(sourcemaps.init())
+    .pipe(sass())
     .pipe(postcss(processors))
     .pipe(cssnano({ discardComments: { removeAll: true }}))
   .pipe(sourcemaps.write())
@@ -162,7 +164,7 @@ gulp.task('server', ['css', 'jekyll-build'], () => {
 
 // Watcher task
 gulp.task('watch', () => {
-  gulp.watch(path.css, ['css']);
+  gulp.watch(path.scss, ['css']);
   gulp.watch(path.js, ['js']);
   gulp.watch(path.images, ['imagemin']);
   gulp.watch(path.jekyll, ['jekyll-rebuild']);

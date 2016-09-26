@@ -1,13 +1,13 @@
 .hero--section {
   background: linear-gradient(-120deg, #CFD1C7, #E0C9B8);
   text-align: center;
-  color: var(--color-white);
+  color: $color-white;
 
   h1.hero--header {
   }
 
   h3.hero--lead-text {
-    font-size: var(--type-size-h2);
+    font-size: $type-size-h2;
     padding-bottom: 80px;
     opacity: .65;
   }
@@ -23,16 +23,16 @@
 
     .link-field {
       display: inline-block;
-      color: var(--color-black);
-      background: var(--color-white);
+      color: $color-black;
+      background: $color-white;
       padding: 12px 42px;
       border-radius: 15px;
       box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .25);
 
       p.link {
-        font-size: var(--type-size-normal);
+        font-size: $type-size-normal;
         padding: 8px 0;
-        border-bottom: 1px dashed var(--color-grey);
+        border-bottom: 1px dashed $color-grey;
         border-top: 1px transparent;
       }
 
@@ -40,9 +40,9 @@
 
     span.version {
       display: block;
-      color: var(--color-black);
+      color: $color-black;
       margin-top: 30px;
-      font-size: var(--type-size-small);
+      font-size: $type-size-small;
       opacity: .6;
     }
 

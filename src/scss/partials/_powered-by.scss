@@ -1,5 +1,5 @@
 .powered-by--section {
-  background: var(--color-light-grey);
+  background: $color-light-grey;
   margin-top: -90px;
   padding-top: 120px;
   padding-bottom: 80px;
@@ -7,8 +7,8 @@
 
   h3.title {
     text-transform: uppercase;
-    font-size: var(--type-size-mini);
-    color: var(--color-medium-grey);
+    font-size: $type-size-mini;
+    color: $color-medium-grey;
     padding-bottom: 30px;
   }
 

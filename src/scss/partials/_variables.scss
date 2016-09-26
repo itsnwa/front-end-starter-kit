@@ -1,0 +1,38 @@
+/* Color palette */
+$color-primary        :   rgb(249,230,213);
+$color-secondary      :   rgb(158,68,197);
+$color-light-grey     :   rgb(247, 247, 247);
+$color-grey           :   rgb(200,200,200);
+$color-medium-grey    :   rgb(150,150,150);
+$color-white          :   rgb(255,255,255);
+$color-black          :   rgb(45,45,45);
+
+
+/* Typeface */
+$typeface-main-bold   :   'sf-mono-bold',     monospace;
+$typeface-main-normal :   'sf-mono-regular',  monospace;
+$typeface-main-light  :   'sf-mono-light',    monospace;
+
+
+/* Typography - Sizes */
+
+/* Headings */
+$type-size-h1         :   58px;
+$type-size-h2         :   24px;
+$type-size-h3         :   18px;
+
+
+/* Text */
+$type-size-normal     :   16px;
+$type-size-small      :   13px;
+$type-size-mini       :   10px;
+
+
+/* Padding */
+$padding-normal       :   60px;
+
+
+/* Breakpoints */
+ $breakpoint-small    :   600px;
+ $breakpoint-medium   :   900px;
+ $breakpoint-large    :   1200px;
