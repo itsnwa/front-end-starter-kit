@@ -18,7 +18,6 @@ const gulp        = require('gulp'),
 
       // PostCSS Plugins
       pxtorem     = require('postcss-pxtorem'),
-      precss      = require('precss'),
       cssnext     = require('postcss-cssnext'),
       lost        = require('lost');
 
@@ -63,7 +62,6 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], () => {
 gulp.task('css', () => {
 
   var processors = [
-    precss(),
     cssnext({
       browsers: ['last 6 version']
     }),
