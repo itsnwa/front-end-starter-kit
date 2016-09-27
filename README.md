@@ -21,20 +21,20 @@ Make sure you follow the folder structure to ensure that all files get processed
 front-end-starter-kit/
 |
 |- src/
-|  |- index.html ___________________ # Entry point
+|  |- index.html _____________________ # Entry point
 |
-|  |- css/
-|    |- main.css ___________________ # Main CSS file, only imports
+|  |- scss/
+|    |- main.scss ____________________ # Main SCSS file, only imports
 |    |- partials/
-|       |-  _base.css________________ # Base styles
-|       |-  _variables.css___________ # Variables
-|       |-  ...______________________ # Add your own components here
+|       |-  _base.scss________________ # Base styles
+|       |-  _variables.scss___________ # Variables
+|       |-  ..._______________________ # Add your own components here
 |
 |  |- images/
 |     # Put all your images here, including content images
 |
 |  |- js/
-|    |- main.js ____________________ # Main JS
+|    |- main.js ______________________ # Main JS
 ```
 
 # Based on
