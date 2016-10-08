@@ -23,7 +23,7 @@ const gulp        = require('gulp'),
 
 
       // Default source and build folder
-var   src         = './src',
+var   src         = './_src',
       dist        = './assets';
 
 

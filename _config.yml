@@ -15,7 +15,7 @@ markdown: kramdown
 
 
 # Forget about these folders
-exclude: ["src",
+exclude: ["_src",
           "gulpfile.js",
           "Gemfile",
           "Gemfile.lock",
