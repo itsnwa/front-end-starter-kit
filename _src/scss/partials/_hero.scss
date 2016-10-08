@@ -19,10 +19,14 @@
   }
 
   .one-step-setup {
-    margin-top: -49px;
+    width: 40rem;
+    max-width: 95%;
+    margin: -49px auto 0 auto;
 
     .link-field {
-      display: inline-block;
+      display: block;
+      position: relative;
+      width: auto;
       color: $color-black;
       background: $color-white;
       padding: 12px 42px;
@@ -34,6 +38,8 @@
         padding: 8px 0;
         border-bottom: 1px dashed $color-grey;
         border-top: 1px transparent;
+        white-space: pre;
+        overflow-y: scroll;
       }
 
     }
@@ -46,6 +52,13 @@
       opacity: .6;
     }
 
+  }
+
+  & + * {
+    padding-top: 160px;
+    margin-top: -90px;
+    z-index: 100;
+    background: $color-light-grey;
   }
 
 }

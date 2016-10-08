@@ -24,6 +24,14 @@ body {
   h3 {
     font-family: $typeface-main-normal;
     font-size: $type-size-normal;
+
+    &.title {
+      text-transform: uppercase;
+      font-size: $type-size-mini;
+      color: $color-medium-grey;
+      padding-bottom: 30px;
+    }
+
   }
 
 }
@@ -32,6 +40,7 @@ section {
 
   .container {
     lost-center: 920px;
+    padding: 0 40px;
   }
 
 }

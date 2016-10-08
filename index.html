@@ -2,16 +2,7 @@
 layout: default
 ---
 
-<section class="hero--section">
-  {% include navbar.html %}
-  <h1 class="hero--header">Front-end starter kit</h1>
-  <h3 class="hero--lead-text">A very much opinionated thingy</h3>
-  <img src="{{ site.baseurl }}/assets/images/computer-illu.svg" class="computer" alt="computer illustration">
-  <div class="one-step-setup">
-    <div class="link-field">
-      <p class="link">$ git clone https://github.com/itsnwa/front-end-starter-kit.git</p>
-    </div>
-    <span class="version">v0.0.1 alpha</span>
-  </div>
-</section>
+{% include hero.html %}
+{% include intro.html %}
+{% include setup.html %}
 {% include powered-by.html %}
