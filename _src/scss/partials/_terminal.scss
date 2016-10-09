@@ -1,0 +1,56 @@
+section.terminal--section {
+  display: block;
+  height: auto;
+  width: 100%;
+  background: rgb(15,15,15);
+  color: $color-white;
+  margin: 0;
+
+  pre {
+    white-space: pre-wrap;
+    margin: 0;
+    padding: 20px 60px;
+
+    code {
+      font-family: $typeface-main-light;
+      font-size: 14px;
+      position: relative;
+
+      span.terminal--cursor {
+      	opacity: 0;
+      	animation: cursor 1s infinite;
+      }
+
+      @keyframes cursor {
+      	0% {
+      		opacity: 0;
+      	}
+      	40% {
+      		opacity: 0;
+      	}
+      	50% {
+      		opacity: 1;
+      	}
+      	90% {
+      		opacity: 1;
+      	}
+      	100% {
+      		opacity: 0;
+      	}
+      }
+
+      &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: $color-black;
+        left: -60px;
+      }
+
+    }
+
+  }
+
+}

@@ -9,15 +9,25 @@ $color-black          :   rgb(45,45,45);
 
 
 /* Typeface */
-$typeface-main-bold   :   'sf-mono-bold',     monospace;
-$typeface-main-normal :   'sf-mono-regular',  monospace;
-$typeface-main-light  :   'sf-mono-light',    monospace;
+
+// Haadings (Gotham)
+$typeface-heading     :   'gotham', sans-serif;
+
+// Main font (Monospace)
+$typeface-main-bold           :   'sf-mono-semibold', monospace;
+$typeface-main-bold-italic    :   'sf-mono-semibold-italic', monospace;
+
+$typeface-main-normal         :   'sf-mono-regular', monospace;
+$typeface-main-normal-italic  :   'sf-mono-regular-italic', monospace;
+
+$typeface-main-light          :   'sf-mono-light', monospace;
+$typeface-main-light-italic   :   'sf-mono-light-italic', monospace;
 
 
 /* Typography - Sizes */
 
 /* Headings */
-$type-size-h1         :   58px;
+$type-size-h1         :   48px;
 $type-size-h2         :   24px;
 $type-size-h3         :   18px;
 

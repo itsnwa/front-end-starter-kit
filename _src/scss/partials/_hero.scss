@@ -1,64 +1,14 @@
 .hero--section {
-  background: linear-gradient(-120deg, rgb(207, 209, 199), rgb(222, 158, 111));
-  text-align: center;
-  color: $color-white;
+  color: $color-black;
+  flex: 1;
 
   h1.hero--header {
+
   }
 
   h3.hero--lead-text {
-    font-size: $type-size-h2;
-    padding-bottom: 80px;
+    font-size: $type-size-h3;
     opacity: .65;
-  }
-
-  img.computer {
-    width: 960px;
-    max-width: 90%;
-    z-index: 50;
-  }
-
-  .one-step-setup {
-    width: 40rem;
-    max-width: 95%;
-    margin: -49px auto 0 auto;
-
-    .link-field {
-      display: block;
-      position: relative;
-      width: auto;
-      color: $color-black;
-      background: $color-white;
-      padding: 12px 42px;
-      border-radius: 15px;
-      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .25);
-
-      p.link {
-        font-size: $type-size-normal;
-        padding: 8px 0;
-        border-bottom: 1px dashed $color-grey;
-        border-top: 1px transparent;
-        white-space: pre;
-        overflow-y: scroll;
-      }
-
-    }
-
-    span.version {
-      display: block;
-      color: $color-black;
-      margin-top: 30px;
-      font-size: $type-size-small;
-      opacity: .6;
-    }
-
-  }
-
-  & + * {
-    padding-top: 160px;
-    margin-top: -90px;
-    z-index: 100;
-    background: $color-light-grey;
   }
 
 }
