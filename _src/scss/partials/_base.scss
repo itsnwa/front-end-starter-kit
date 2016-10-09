@@ -37,12 +37,15 @@ body {
     font-size: $type-size-h1;
     text-transform: uppercase;
     margin-bottom: 20px;
+    font-weight: 400;
   }
 
   h3 {
     font-family: $typeface-heading;
     font-size: $type-size-h3;
     margin-bottom: 20px;
+    font-weight: 400;
+    color: lighten($color-black, 20);
 
     &.title {
       text-transform: uppercase;
@@ -62,4 +65,15 @@ section {
     padding: 0 40px;
   }
 
+}
+
+@media screen and (min-width: $breakpoint-large) {
+  body {
+    .wrapper {
+      flex-direction: row;
+      section.terminal--section {
+        flex: 0 0 40%;
+      }
+    }
+  }
 }
