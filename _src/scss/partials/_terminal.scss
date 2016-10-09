@@ -5,8 +5,10 @@ section.terminal--section {
   background: rgb(15,15,15);
   color: $color-white;
   margin: 0;
+  padding-bottom: 40px;
 
   pre {
+    position: relative;
     white-space: pre-wrap;
     margin: 0;
     padding: 20px 20px 20px 60px;
@@ -14,9 +16,12 @@ section.terminal--section {
     code {
       font-family: $typeface-main-light;
       font-size: 14px;
-      position: relative;
 
       span.terminal--bash { user-select: none; }
+
+      span.terminal--comment {
+        color: $color-medium-grey;
+      }
 
       span.terminal--cursor {
       	opacity: 0;
@@ -42,17 +47,17 @@ section.terminal--section {
       	}
       }
 
-      // Vertical line
-      &:before {
-        position: absolute;
-        content: "";
-        display: block;
-        width: 1px;
-        height: 100%;
-        background: $color-black;
-        left: -70px;
-      }
+    }
 
+    // Vertical line
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 1px;
+      height: 93%;
+      background: $color-black;
+      left: 30px;
     }
 
   }

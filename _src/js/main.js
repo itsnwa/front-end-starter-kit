@@ -1,7 +1,6 @@
-// Copy to clipboard
+// Copy to clipboard (C = key 67)
 
-var btn = document.getElementById('btn');
-var clipboard = new Clipboard(btn);
+var clipboard = new Clipboard('');
 
 clipboard.on('success', function(e) {
     console.log(e);
