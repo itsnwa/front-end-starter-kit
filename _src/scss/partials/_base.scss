@@ -2,6 +2,13 @@
 @lost flexbox flex;
 @lost gutter 60px;
 
+* { box-sizing: border-box; }
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+  padding: 0;
+}
+
 html,body {
   height: 100%;
   margin: 0;
@@ -29,11 +36,13 @@ body {
     font-family: $typeface-heading;
     font-size: $type-size-h1;
     text-transform: uppercase;
+    margin-bottom: 20px;
   }
 
   h3 {
-    font-family: $typeface-main-normal;
-    font-size: $type-size-normal;
+    font-family: $typeface-heading;
+    font-size: $type-size-h3;
+    margin-bottom: 20px;
 
     &.title {
       text-transform: uppercase;

@@ -1,14 +1,10 @@
 .hero--section {
   color: $color-black;
   flex: 1;
+  padding: 60px;
 
   h1.hero--header {
-
+    margin-left: -3px;
   }
-
-  h3.hero--lead-text {
-    font-size: $type-size-h3;
-    opacity: .65;
-  }
-
+  
 }

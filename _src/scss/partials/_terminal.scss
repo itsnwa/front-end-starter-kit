@@ -16,9 +16,12 @@ section.terminal--section {
       font-size: 14px;
       position: relative;
 
+      span.terminal--bash { user-select: none; }
+
       span.terminal--cursor {
       	opacity: 0;
       	animation: cursor 1s infinite;
+        user-select: none;
       }
 
       @keyframes cursor {
@@ -39,6 +42,7 @@ section.terminal--section {
       	}
       }
 
+      // Vertical line
       &:before {
         position: absolute;
         content: "";
@@ -46,7 +50,7 @@ section.terminal--section {
         width: 1px;
         height: 100%;
         background: $color-black;
-        left: -60px;
+        left: -70px;
       }
 
     }

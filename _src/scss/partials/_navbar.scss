@@ -1,7 +1,7 @@
 .header--nav-bar {
-  lost-flex-container: row;
-  padding: $padding-normal;
+  display: flex;
   justify-content: space-between;
+  padding-bottom: 30px;
 
   img { height: 28px; }
 
