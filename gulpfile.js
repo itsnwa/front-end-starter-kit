@@ -7,6 +7,8 @@ const gulp        = require('gulp'),
       postcss     = require('gulp-postcss'),
       sourcemaps  = require('gulp-sourcemaps'),
       cssnano     = require('gulp-cssnano'),
+      concat      = require('gulp-concat'),
+      babel       = require('gulp-babel'),
       uglify      = require('gulp-uglify'),
       browserSync = require('browser-sync'),
       imagemin    = require('gulp-imagemin'),
@@ -30,7 +32,7 @@ var   src         = './_src',
 // Folders ( Make sure you add new jekyll folders to the jekyll line as needed )
 var path = {
       scss: [src + '/scss/**/*.scss'],
-      js: [src + '/js/**/*.js'],
+      js: ['node_modules/clipboard/dist/clipboard.js', src + '/js/**/*.js'],
       images: [src + '/images/**/*'],
       fonts: [src + '/fonts/**/*'],
       jekyll: ['index.html', '_pages/**/*', '_layouts/**/*', '_includes/**/*', '_data/**/*', 'assets/**/*']
@@ -86,6 +88,10 @@ gulp.task('css', () => {
 // Javascript
 gulp.task('js', () => {
   return gulp.src(path.js)
+    .pipe(concat('bundle.js'))
+    .pipe(babel({
+      presets: ['es2015']
+    }))
     .pipe(uglify())
     .pipe(gulp.dest(dist + '/js/'))
     .pipe(browserSync.stream());
