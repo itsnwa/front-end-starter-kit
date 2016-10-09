@@ -32,7 +32,12 @@ var   src         = './_src',
 // Folders ( Make sure you add new jekyll folders to the jekyll line as needed )
 var path = {
       scss: [src + '/scss/**/*.scss'],
-      js: ['node_modules/clipboard/dist/clipboard.js', src + '/js/**/*.js'],
+      js: [
+        // Vendors
+        'node_modules/clipboard/dist/clipboard.js',
+        // Local JS
+        src + '/js/**/*.js'
+      ],
       images: [src + '/images/**/*'],
       fonts: [src + '/fonts/**/*'],
       jekyll: ['index.html', '_pages/**/*', '_layouts/**/*', '_includes/**/*', '_data/**/*', 'assets/**/*']
