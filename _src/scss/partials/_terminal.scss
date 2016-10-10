@@ -1,20 +1,31 @@
 section.terminal--section {
   display: block;
+  position: relative;
   height: auto;
-  width: 100%;
-  background: rgb(15,15,15);
+  background: url('../images/workspace.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: $color-white;
   margin: 0;
   padding-bottom: 40px;
-  position: fixed;
-  bottom: 0;
+
+  &:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0, .85);
+    z-index: 50;
+  }
 
   pre {
     position: relative;
     white-space: pre-wrap;
     margin: 0;
     padding: 20px 20px 20px 60px;
-    position: fixed;
+    z-index: 100;
 
     code {
       font-family: $typeface-main-light;
@@ -87,11 +98,6 @@ section.terminal--section {
 }
 
 @media screen and (max-width: $breakpoint-large) {
-  section.terminal--section {
-    pre {
-      position: relative;
-    }
-  }
   .copy-notification {
     top: 0;
     transform: translate(-50%,0);

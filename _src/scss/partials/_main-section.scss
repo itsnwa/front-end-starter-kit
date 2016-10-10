@@ -2,11 +2,13 @@ main.main--section {
   color: $color-black;
   flex: 1;
   padding: 40px 80px 40px 80px;
+  overflow: auto;
+  height: 100vh;
 
   p {
     margin-top: 40px;
     color: $color-black;
-    max-width: 620px;
+    max-width: 720px;
 
     & + p { margin-top: 40px; }
 
@@ -47,13 +49,18 @@ main.main--section {
 
   img {
     height: 50px;
-    margin-right: 50px;
+    margin-right: 40px;
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 
 }
 
 @media screen and (max-width: $breakpoint-large) {
   main.main--section {
-    padding: 40px 60px 50vh 60px;
+    padding: 40px 60px 40px 60px;
+    order: 2;
+    height: auto;
   }
 }
