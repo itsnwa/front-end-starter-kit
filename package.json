@@ -1,20 +1,20 @@
 {
-  "name": "frontend-boilerplate",
+  "name": "Front-end starter kit",
   "version": "0.0.1",
-  "description": "Opinionated front-end boilerplate",
+  "description": "Opinionated front-end starter kit",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itsnwa/frontend-boilerplate.git"
+    "url": "git+https://github.com/itsnwa/front-end-starter-kit.git"
   },
   "author": "Nichlas Wærnes Andersen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/itsnwa/frontend-boilerplate/issues"
+    "url": "https://github.com/itsnwa/front-end-starter-kit/issues"
   },
-  "homepage": "https://github.com/itsnwa/frontend-boilerplate#readme",
+  "homepage": "https://github.com/itsnwa/front-end-starter-kit#readme",
   "devDependencies": {
     "babel-preset-es2015": "^6.16.0",
     "better-console": "^0.2.4",
@@ -25,6 +25,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-imagemin": "^3.0.3",
+    "gulp-markdown": "^1.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.2.2",

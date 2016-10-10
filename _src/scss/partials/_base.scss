@@ -13,6 +13,7 @@ html,body {
   height: 100%;
   margin: 0;
   padding: 0;
+  line-height: 1.54;
 }
 
 body {
@@ -38,6 +39,12 @@ body {
     text-transform: uppercase;
     margin-bottom: 20px;
     font-weight: 400;
+  }
+
+  h2 {
+    font-family: $typeface-heading;
+    font-size: $type-size-h2;
+    text-transform: uppercase;
   }
 
   h3 {
@@ -72,7 +79,9 @@ section {
     .wrapper {
       flex-direction: row;
       section.terminal--section {
-        flex: 0 0 40%;
+        position: relative;
+        bottom: inherit;
+        flex: 0 0 50%;
       }
     }
   }

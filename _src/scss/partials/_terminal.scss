@@ -6,12 +6,15 @@ section.terminal--section {
   color: $color-white;
   margin: 0;
   padding-bottom: 40px;
+  position: fixed;
+  bottom: 0;
 
   pre {
     position: relative;
     white-space: pre-wrap;
     margin: 0;
     padding: 20px 20px 20px 60px;
+    position: fixed;
 
     code {
       font-family: $typeface-main-light;
@@ -55,11 +58,19 @@ section.terminal--section {
       content: "";
       display: block;
       width: 1px;
-      height: 93%;
+      height: 100%;
       background: $color-black;
       left: 30px;
     }
 
   }
 
+}
+
+@media screen and (max-width: $breakpoint-large) {
+  section.terminal--section {
+    pre {
+      position: relative;
+    }
+  }
 }

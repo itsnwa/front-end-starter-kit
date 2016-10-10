@@ -2,7 +2,7 @@
 
 Opinionated from top to bottom.
 
-# Getting Started
+## Getting Started
 
 ### Install all dependencies
 
@@ -37,7 +37,7 @@ front-end-starter-kit/
 |    |- main.js ______________________ # Main JS
 ```
 
-# Based on
+## Based on
 
 - jekyll
 - gulp

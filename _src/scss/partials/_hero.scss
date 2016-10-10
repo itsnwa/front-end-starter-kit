@@ -1,16 +1,48 @@
 .hero--section {
   color: $color-black;
   flex: 1;
-  padding: 40px 80px;
+  padding: 40px 80px 50vh 80px;
 
-  h1.hero--header {
+  p {
+    margin-bottom: 80px;
+    color: $color-black;
+  }
+
+
+  h1 {
     margin-left: -3px;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    color: $color-black;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: $type-size-normal;
+  }
+
+  code {
+    background-color: $color-white;
+    padding: 2px 8px;
+    white-space: pre-wrap;
+  }
+
+  pre {
+    background: $color-white;
+    padding: 30px;
+    margin-bottom: 80px;
+    color: #666;
+    & > code { padding: 0; }
   }
 
 }
 
 @media screen and (max-width: $breakpoint-large) {
   .hero--section {
-    padding: 40px 60px;
+    padding: 40px 60px 50vh 60px;
   }
 }

@@ -16,6 +16,7 @@ const gulp        = require('gulp'),
       del         = require('del'),
       plumber     = require('gulp-plumber'),
       rename      = require('gulp-rename'),
+      markdown    = require('gulp-markdown'),
       cp          = require('child_process'),
 
       // PostCSS Plugins
@@ -123,6 +124,14 @@ gulp.task('copy-fonts', () => {
 });
 
 
+// Parse README.md to HTML
+gulp.task('readme', () => {
+    return gulp.src('README.md')
+        .pipe(markdown())
+        .pipe(gulp.dest('_includes'));
+});
+
+
 // Clean build folder
 gulp.task('clean', () => del(['_site'], {dot: true}));
 gulp.task('clean:all', () => del(['_site', 'assets'], {dot: true}));
@@ -182,7 +191,7 @@ gulp.task('watch', () => {
 
 // Re-build everything
 gulp.task('build', ['clean:all'], () => {
-  gulp.start(['css', 'js', 'imagemin', 'copy-fonts']);
+  gulp.start(['css', 'js', 'imagemin', 'copy-fonts', 'readme']);
 });
 
 
