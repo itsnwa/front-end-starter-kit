@@ -1,4 +1,4 @@
-.hero--section {
+main.main--section {
   color: $color-black;
   flex: 1;
   padding: 40px 80px 40px 80px;
@@ -6,6 +6,7 @@
   p {
     margin-top: 40px;
     color: $color-black;
+    max-width: 620px;
 
     & + p { margin-top: 40px; }
 
@@ -44,10 +45,15 @@
     & > code { padding: 0; }
   }
 
+  img {
+    height: 50px;
+    margin-right: 50px;
+  }
+
 }
 
 @media screen and (max-width: $breakpoint-large) {
-  .hero--section {
+  main.main--section {
     padding: 40px 60px 50vh 60px;
   }
 }
