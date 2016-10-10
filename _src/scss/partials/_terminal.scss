@@ -91,6 +91,7 @@ section.terminal--section {
   display: none;
   color: $color-black;
   padding: 10px 20px;
+  z-index: 1000;
 
   &.success { background: $color-primary; }
   &.error   { background: $color-danger; }
