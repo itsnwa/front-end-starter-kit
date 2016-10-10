@@ -27,7 +27,9 @@ body {
     min-height: 100%;
   }
 
-  ::selection { background: #ffb7b7; }
+  ::selection { background: lighten($color-primary, 24); }
+
+  a { color: $color-primary; }
 
   p {
     font-size: $type-size-normal;

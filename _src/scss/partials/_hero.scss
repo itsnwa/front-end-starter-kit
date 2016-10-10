@@ -4,25 +4,30 @@
   padding: 40px 80px 40px 80px;
 
   p {
-    margin-bottom: 80px;
+    margin-top: 40px;
     color: $color-black;
-  }
 
+    & + p { margin-top: 40px; }
+
+  }
 
   h1 {
     margin-left: -3px;
   }
 
   h2 {
-    margin-bottom: 40px;
+    margin-top: 80px;
   }
 
   h3 {
     color: $color-black;
-    margin: 0 0 10px 0;
     text-transform: uppercase;
     font-weight: 500;
     font-size: $type-size-normal;
+    margin-top: 80px;
+
+    & + p { margin-top: 20px; }
+
   }
 
   code {
@@ -34,7 +39,7 @@
   pre {
     background: $color-white;
     padding: 30px;
-    margin-bottom: 80px;
+    margin-top: 80px;
     color: #666;
     & > code { padding: 0; }
   }
