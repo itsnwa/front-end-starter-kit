@@ -97,7 +97,8 @@ gulp.task('js', () => {
   return gulp.src(path.js)
     .pipe(concat('bundle.js'))
     .pipe(babel({
-      presets: ['es2015']
+      presets: ['es2015'],
+      compact: true
     }))
     .pipe(uglify())
     .pipe(gulp.dest(dist + '/js/'))
