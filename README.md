@@ -1,6 +1,8 @@
 # Front-end Starter Kit
 
-Opinionated from top to bottom.
+This is my very own extremely opinionated front-end starter kit. I'm just putting it out here in case someone finds it helpful in any way. You’re very welcome to submit issues and contribute if you see anything that needs improvements (I bet there is).
+
+If you would like to see something added to the mix, please feel free to let me know via Twitter: [@nichlaswa](https://twitter.com/nichlaswa)
 
 ## Getting Started
 
