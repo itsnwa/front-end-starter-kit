@@ -35,6 +35,7 @@ var path = {
       scss: [src + '/scss/**/*.scss'],
       js: [
         // Vendors
+        'node_modules/jquery/dist/jquery.js',
         'node_modules/clipboard/dist/clipboard.js',
         // Local JS
         src + '/js/**/*.js'

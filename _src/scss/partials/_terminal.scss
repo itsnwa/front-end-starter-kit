@@ -23,7 +23,12 @@ section.terminal--section {
       span.terminal--bash { user-select: none; }
 
       span.terminal--comment {
-        color: $color-primary;
+        color: darken($color-medium-grey, 20);
+      }
+
+      span.git-repo--link {
+        cursor: pointer;
+        &:hover { color: darken($color-medium-grey, 20); }
       }
 
       span.terminal--cursor {
@@ -67,10 +72,28 @@ section.terminal--section {
 
 }
 
+.copy-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+  color: $color-black;
+  padding: 10px 20px;
+
+  &.success { background: $color-primary; }
+  &.error   { background: $color-danger; }
+
+}
+
 @media screen and (max-width: $breakpoint-large) {
   section.terminal--section {
     pre {
       position: relative;
     }
+  }
+  .copy-notification {
+    top: 0;
+    transform: translate(-50%,0);
   }
 }
