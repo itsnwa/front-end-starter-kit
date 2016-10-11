@@ -48,11 +48,12 @@ main.main--section {
   }
 
   img {
-    height: 50px;
-    margin-right: 40px;
-    &:last-of-type {
-      margin-right: 0;
-    }
+    height: 30px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    &:last-of-type { margin-right: none; }
+
   }
 
 }

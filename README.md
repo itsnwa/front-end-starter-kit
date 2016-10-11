@@ -5,10 +5,11 @@ This is my very own extremely opinionated front-end starter kit. I'm just puttin
 If you would like to see something added to the mix, please feel free to let me know via Twitter: [@nichlaswa](https://twitter.com/nichlaswa)
 
 ## Powered by
-![alt text](assets/images/icons/jekyll.svg "Jekyll")
-![alt text](assets/images/icons/gulp.svg "Gulp")
-![alt text](assets/images/icons/postcss.svg "PostCSS")
-![alt text](assets/images/icons/lost.svg "Lost Grid")
+![alt text](https://cdn.rawgit.com/itsnwa/front-end-starter-kit/master/assets/images/icons/jekyll.svg "Jekyll")
+![alt text](https://cdn.rawgit.com/itsnwa/front-end-starter-kit/master/assets/images/icons/gulp.svg "Gulp")
+![alt text](https://cdn.rawgit.com/itsnwa/front-end-starter-kit/master/assets/images/icons/browsersync.svg "Browser Sync")
+![alt text](https://cdn.rawgit.com/itsnwa/front-end-starter-kit/master/assets/images/icons/postcss.svg "PostCSS")
+![alt text](https://cdn.rawgit.com/itsnwa/front-end-starter-kit/master/assets/images/icons/lost.svg "Lost Grid")
 
 ## Getting Started
 
