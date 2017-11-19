@@ -20,7 +20,7 @@ const gulp        = require('gulp'),
       cp          = require('child_process'),
 
       // PostCSS Plugins
-      cssnext     = require('postcss-cssnext'),
+      cssnext     = require('postcss-cssnext');
 
       // Default source and build folder
 var   src         = './_src',
@@ -44,7 +44,7 @@ var path = {
 
 var config = {
   serverPort: 3000
-}
+};
 
 // Jekyll build
 var messages = {
@@ -109,9 +109,9 @@ gulp.task('imagemin', () => {
 });
 
 // Copy font files
-gulp.task('copy-fonts', () => {
-  gulp.src(path.fonts)
-  .pipe(gulp.dest(dist + '/fonts/'));
+gulp.task('fonts', () => {
+  return gulp.src(path.fonts)
+    .pipe(gulp.dest(dist + '/fonts/'));
 });
 
 // Parse README.md to HTML
@@ -166,7 +166,7 @@ gulp.task('browser-sync', gulp.series('css', 'jekyll-build', function() {
   console.log('   / \\ / \\/ \\/ - \\    Local Development Environment');
   console.log('           ');
   console.log('           ');
-  console.log('Listening on port' + config.serverPort);
+  console.log('Listening on port ' + config.serverPort);
   console.log('           ');
   console.log('           ');
 
@@ -181,8 +181,8 @@ gulp.task('watch', function() {
 });
 
 // Re-build everything
-gulp.task('build', gulp.series('clean:all', function() {
-  gulp.series('css', 'js', 'imagemin', 'copy-fonts', 'readme');
+gulp.task('build', gulp.series('clean', gulp.parallel('css', 'js', 'imagemin', 'fonts', 'readme'), function(done) {
+  done();
 }));
 
 // Start Everything with the default task

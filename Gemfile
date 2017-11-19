@@ -3,7 +3,7 @@ ruby RUBY_VERSION
 
 
 # Jekyll
-gem "jekyll", "3.2.1"
+gem "jekyll", "3.6.2"
 
 
 # Jekyll theme

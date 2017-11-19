@@ -1,5 +1,5 @@
 {
-  "name": "Front-end starter kit",
+  "name": "front-end-starter-kit",
   "version": "0.0.1",
   "description": "Opinionated front-end starter kit",
   "scripts": {
@@ -16,12 +16,12 @@
   },
   "homepage": "https://github.com/itsnwa/front-end-starter-kit#readme",
   "devDependencies": {
-    "babel-preset-es2015": "^6.16.0",
     "better-console": "^1.0.1",
     "browser-sync": "^2.18.13",
     "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-babel": "^7.0.0",
+    "babel-core": "6.26.0",
     "babel-preset-env": "1.6.1",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
@@ -37,6 +37,7 @@
     "postcss-cssnext": "^3.0.2"
   },
   "dependencies": {
+    "jquery": "3.2.1",
     "clipboard": "^1.7.1",
     "normalize.css": "^7.0.0"
   }
