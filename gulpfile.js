@@ -20,10 +20,7 @@ const gulp        = require('gulp'),
       cp          = require('child_process'),
 
       // PostCSS Plugins
-      pxtorem     = require('postcss-pxtorem'),
       cssnext     = require('postcss-cssnext'),
-      lost        = require('lost');
-
 
       // Default source and build folder
 var   src         = './_src',
@@ -45,12 +42,14 @@ var path = {
       jekyll: ['index.html', '_pages/**/*', '_layouts/**/*', '_includes/**/*', '_data/**/*', 'assets/**/*']
     };
 
+var config = {
+  serverPort: 3000
+}
 
 // Jekyll build
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
-
 
 // Build the Jekyll Site
 gulp.task('jekyll-build', (code) => {
@@ -60,12 +59,10 @@ gulp.task('jekyll-build', (code) => {
       .on('close', code);
 });
 
-
 // Rebuild Jekyll & do page reload
-gulp.task('jekyll-rebuild', ['jekyll-build'], () => {
+gulp.task('jekyll-rebuild', gulp.series('jekyll-build', function() {
     browserSync.reload();
-});
-
+}));
 
 // CSS
 gulp.task('css', () => {
@@ -73,11 +70,6 @@ gulp.task('css', () => {
   var processors = [
     cssnext({
       browsers: ['last 6 version']
-    }),
-    lost(),
-    pxtorem({
-      propWhiteList: [],
-      mediaQuery: true
     })
   ];
 
@@ -91,20 +83,18 @@ gulp.task('css', () => {
   .pipe(browserSync.stream());
 });
 
-
 // Javascript
 gulp.task('js', () => {
   return gulp.src(path.js)
     .pipe(concat('bundle.js'))
     .pipe(babel({
-      presets: ['es2015'],
+      presets: ['env'],
       compact: true
     }))
     .pipe(uglify())
     .pipe(gulp.dest(dist + '/js/'))
     .pipe(browserSync.stream());
 });
-
 
 // Images
 gulp.task('imagemin', () => {
@@ -118,13 +108,11 @@ gulp.task('imagemin', () => {
     .pipe(browserSync.stream());
 });
 
-
 // Copy font files
 gulp.task('copy-fonts', () => {
   gulp.src(path.fonts)
   .pipe(gulp.dest(dist + '/fonts/'));
 });
-
 
 // Parse README.md to HTML
 gulp.task('readme', () => {
@@ -133,19 +121,21 @@ gulp.task('readme', () => {
         .pipe(gulp.dest('_includes'));
 });
 
+// Clean build folders
+gulp.task('clean', function() {
+  return del([
+    '_site',
+    'assets'
+  ]);
+});
 
-// Clean build folder
-gulp.task('clean', () => del(['_site'], {dot: true}));
-gulp.task('clean:all', () => del(['_site', 'assets'], {dot: true}));
-
-
-// Server
-gulp.task('server', ['css', 'jekyll-build'], () => {
-  browserSync.init({
+// Wait for jekyll-build, then launch the Server
+gulp.task('browser-sync', gulp.series('css', 'jekyll-build', function() {
+  browserSync({
     server: {
-      baseDir: '_site',
+        baseDir: '_site'
     },
-    port: 3000,
+    port: config.serverPort,
     notify: {
       styles: {
         top: '30px',
@@ -168,7 +158,7 @@ gulp.task('server', ['css', 'jekyll-build'], () => {
     logLevel: 'silent'
   });
 
-  console.clear();
+  // Some fancy console art
   console.log('Starting DevelopmentServer');
   console.log('           ');
   console.log('           ');
@@ -176,28 +166,24 @@ gulp.task('server', ['css', 'jekyll-build'], () => {
   console.log('   / \\ / \\/ \\/ - \\    Local Development Environment');
   console.log('           ');
   console.log('           ');
-  console.log('Listening on port 3000');
+  console.log('Listening on port' + config.serverPort);
   console.log('           ');
   console.log('           ');
+
+}));
+
+// Watch files
+gulp.task('watch', function() {
+  gulp.watch(paths.scss, gulp.series('css'));
+  gulp.watch(paths.js, gulp.series('js'));
+  gulp.watch(paths.images, gulp.series('imagemin'));
+  gulp.watch(paths.jekyll, gulp.series('jekyll-rebuild'));
 });
-
-
-// Watcher task
-gulp.task('watch', () => {
-  gulp.watch(path.scss, ['css']);
-  gulp.watch(path.js, ['js']);
-  gulp.watch(path.images, ['imagemin']);
-  gulp.watch(path.jekyll, ['jekyll-rebuild']);
-});
-
 
 // Re-build everything
-gulp.task('build', ['clean:all'], () => {
-  gulp.start(['css', 'js', 'imagemin', 'copy-fonts', 'readme']);
-});
+gulp.task('build', gulp.series('clean:all', function() {
+  gulp.series('css', 'js', 'imagemin', 'copy-fonts', 'readme');
+}));
 
-
-// Default task
-gulp.task('default', ['build'], () => {
-  gulp.start(['server', 'watch']);
-});
+// Start Everything with the default task
+gulp.task('default', gulp.series('browser-sync', 'watch'));

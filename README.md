@@ -48,12 +48,11 @@ front-end-starter-kit/
 - gulp
 - browsersync
 - modernizer
+- babel
 - sass
 - postcss
   - nextcss
   - autoprefixer
-  - pxtorem
-  - lost
 - cssnano
 - imagemin
 - uglifyjs
